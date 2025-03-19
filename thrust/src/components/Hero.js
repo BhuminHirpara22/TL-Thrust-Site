@@ -10,11 +10,11 @@ const conthrax = localFont({
   src: "../../public/font/Conthrax-SemiBold.otf",
 });
 
-import registerNowBackground from "../../public/register_now_bg.svg";
-import bottomRightOrange from "../../public/bottom_right_orange.svg";
-import bottomRightWhite from "../../public/bottom_right_white.svg";
-import topLeftWhite from "../../public/top_left_white.svg";
-import whiteHr from "../../public/white_hr.svg";
+import registerNowBackground from "../../public/hero_assets/register_now_bg.svg";
+import bottomRightOrange from "../../public/hero_assets/bottom_right_orange.svg";
+import bottomRightWhite from "../../public/hero_assets/bottom_right_white.svg";
+import topLeftWhite from "../../public/hero_assets/top_left_white.svg";
+import whiteHr from "../../public/hero_assets/white_hr.svg";
 import Image from "next/image";
 
 export default function Hero() {
@@ -22,7 +22,7 @@ export default function Hero() {
     <div className="flex flex-row">
       <section className="w-1/2 relative z-0 overflow-clip">
         <video
-          src="/greybg.mp4"
+          src="/hero_assets/greybg.mp4"
           loop
           autoPlay
           playsInline
