@@ -11,10 +11,12 @@ export default function Home() {
   return (
     <main className="bg-black text-white">
       <Header />
-      <Hero />
-      <About />
-      <Events />
-      <Footer />
+      
+      {/* Add IDs to the sections */}
+      <div id="hero"><Hero /></div>
+      <div id="about"><About /></div>
+      <div id="events"><Events /></div>
+      <div id="contact"><Footer /></div>
     </main>
   );
 }

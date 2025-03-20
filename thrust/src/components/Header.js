@@ -1,14 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import Logo from "../../public/images/thrust_logo.png";
-import { Audiowide } from '@next/font/google';
+import { Audiowide } from 'next/font/google';
 import localFont from 'next/font/local';
 
-// Import fonts
-const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
+
+const audiowide = Audiowide({ subsets: ["latin"], weight: ["400"] });  
 const nasalization = localFont({ src: '../../public/font/nasalization-rg.otf' });
 
 export default function Header() {
@@ -25,17 +24,13 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when window is resized to desktop
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  // Smooth scroll handler
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className={`bg-black text-white py-3 md:py-4 px-4 md:px-8 flex justify-between items-center w-full sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}>
@@ -53,16 +48,15 @@ export default function Header() {
         </span>
       </div>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation with scroll buttons */}
       <nav className={`hidden md:flex space-x-2 lg:space-x-6 xl:space-x-8 ${audiowide.className} text-sm lg:text-base`}>
-        <Link href="/" className="hover:text-[#F13909] transition-colors px-2">HOME</Link>
-        <Link href="/events" className="hover:text-[#F13909] transition-colors px-2">EVENTS</Link>
-        <Link href="/partners" className="hover:text-[#F13909] transition-colors px-2">PARTNERS</Link>
-        <Link href="/about" className="hover:text-[#F13909] transition-colors px-2">ABOUT</Link>
-        <Link href="/contact" className="text-[#F13909] transition-colors px-2">CONTACT US</Link>
+        <button onClick={() => scrollToSection('hero')} className="hover:text-[#F13909] transition-colors px-2">HOME</button>
+        <button onClick={() => scrollToSection('events')} className="hover:text-[#F13909] transition-colors px-2">EVENTS</button>
+        <button onClick={() => scrollToSection('about')} className="hover:text-[#F13909] transition-colors px-2">ABOUT</button>
+        <button onClick={() => scrollToSection('contact')} className="text-[#F13909] transition-colors px-2">CONTACT US</button>
       </nav>
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu */}
       <button 
         className="md:hidden flex flex-col justify-center items-center space-y-1.5 p-2"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -89,41 +83,30 @@ export default function Header() {
         </div>
 
         <nav className={`flex flex-col space-y-6 p-6 ${audiowide.className}`}>
-          <Link 
-            href="/" 
+          <button 
+            onClick={() => { scrollToSection('hero'); setIsMobileMenuOpen(false); }}
             className="hover:text-[#F13909] transition-colors block py-2 border-b border-gray-800"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             HOME
-          </Link>
-          <Link 
-            href="/events" 
+          </button>
+          <button 
+            onClick={() => { scrollToSection('events'); setIsMobileMenuOpen(false); }}
             className="hover:text-[#F13909] transition-colors block py-2 border-b border-gray-800"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             EVENTS
-          </Link>
-          <Link 
-            href="/partners" 
+          </button>
+          <button 
+            onClick={() => { scrollToSection('about'); setIsMobileMenuOpen(false); }}
             className="hover:text-[#F13909] transition-colors block py-2 border-b border-gray-800"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            PARTNERS
-          </Link>
-          <Link 
-            href="/about" 
-            className="hover:text-[#F13909] transition-colors block py-2 border-b border-gray-800"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             ABOUT
-          </Link>
-          <Link 
-            href="/contact" 
+          </button>
+          <button 
+            onClick={() => { scrollToSection('contact'); setIsMobileMenuOpen(false); }}
             className="text-[#F13909] transition-colors block py-2 border-b border-gray-800"
-            onClick={() => setIsMobileMenuOpen(false)}
           >
             CONTACT US
-          </Link>
+          </button>
         </nav>
       </div>
 

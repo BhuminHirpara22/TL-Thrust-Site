@@ -8,9 +8,9 @@ import Line from "../../public/images/line.png";
 import Logo from "../../public/images/upleft_logo.png";
 import smallLogo from "../../public/images/bottomRight_logo.png";
 import smallWhiteLogo from "../../public/images/bottomRight_whiteLogo.png";
-import { Audiowide } from '@next/font/google';
+import { Audiowide } from "next/font/google";  // Correct import path
 
-const audiowide = Audiowide({ subsets: ['latin'], weight: '400' });
+const audiowide = Audiowide({ subsets: ["latin"], weight: ["400"] });  // Weight should be an array
 
 export default function Events() {
   return (
@@ -18,7 +18,7 @@ export default function Events() {
       <h2 className="text-4xl md:text-5xl lg:text-6xl mb-12 md:mb-16 lg:mb-25 px-4 md:px-8 lg:px-10">EVENTS</h2>
       
       {/* Event grid - changes to 1 column on smaller screens */}
-      <div className="flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 px-4 md:px-8 lg:px-10 xl:px-20">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-20 px-4 md:px-8 lg:px-10 xl:px-20" style={{background: "radial-gradient(ellipse 65% 55% at left, rgba(234, 88, 12, 0.8) 2%,black 60%)"}} >
         {/* Silent DJ */}
         <div className="relative group w-full">
           <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-4 mb-6">
