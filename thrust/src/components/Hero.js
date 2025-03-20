@@ -19,8 +19,8 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="flex flex-col md:flex-row">
-      <section className="w-full md:w-1/2 relative z-0 overflow-clip">
+    <div className="flex flex-col lg:flex-row">
+      <section className="w-full lg:w-1/2 relative z-0 overflow-clip">
         <video
           src="/hero_assets/greybg.mp4"
           loop
@@ -45,9 +45,9 @@ export default function Hero() {
         />
         <Image src={whiteHr} alt="" className="absolute bottom-1/7 left-1/6" />
       </section>
-      <section className=" text-white p-10 text-left relative z-1 w-full md:w-1/2">
+      <section className=" text-white p-10 text-left relative z-1 w-full lg:w-1/2">
         <h2
-          className={`text-6xl md:text-8xl font-bold ${nasalization.className} mt-16`}
+          className={`text-6xl lg:text-8xl font-bold ${nasalization.className} mt-16`}
         >
           TH<span className="text-[#F13909]">R</span>UST
         </h2>
@@ -60,7 +60,7 @@ export default function Hero() {
         <button className="px-6 py-2 mt-6 relative">
           <Image src={registerNowBackground} alt="" />
           <span
-            className={`text-2xl md:text-3xl absolute top-1/2 left-0 w-full ${conthrax.className} -translate-y-1/2`}
+            className={`text-2xl lg:text-3xl absolute top-1/2 left-0 w-full ${conthrax.className} -translate-y-1/2`}
           >
             REGISTER NOW
           </span>
@@ -68,7 +68,7 @@ export default function Hero() {
         <Image
           src={bottomRightOrange}
           alt=""
-          className="ml-auto w-1/4 md:w-auto"
+          className="ml-auto w-1/4 lg:w-auto"
         />
       </section>
     </div>

@@ -22,7 +22,7 @@ export default function About() {
   return (
     <>
       <section id="race-to-create" className="text-white p-10">
-        <div className="flex flex-col md:flex-row align-middle gap-8 relative">
+        <div className="flex flex-col lg:flex-row align-middle gap-8 relative">
           <div className={`relative ${ocra_extended.className} flex-initial`}>
             <h2
               className={`${conthrax.className} text-4xl font-bold flex flex-col`}
@@ -38,13 +38,13 @@ export default function About() {
               your imagination fuels the engine, and engineering principles pave
               the way to your vision.
             </p>
-            <p className="mt-4 pl-16 md:pl-32">
+            <p className="mt-4 pl-16 lg:pl-32">
               This is where you break the chains of conventional thinking, push
               the boundaries of possibility, and transform your boldest ideas
               into tangible realities.
             </p>
           </div>
-          <div className="w-full md:w-2/3 flex-none flex pb-24 md:pb-36">
+          <div className="w-full lg:w-2/3 flex-none flex pb-24 lg:pb-36">
             <video
               src={null}
               className="w-full left-0 top-0"
@@ -54,23 +54,23 @@ export default function About() {
           <Image
             src={bottomLeftOrange}
             alt=""
-            className="absolute left-2 bottom-4 md:bottom-1/3 w-1/6 md:w-auto"
+            className="absolute left-2 bottom-4 lg:bottom-1/3 w-1/6 lg:w-auto"
           />
           <Image
             src={bottomRightOrange}
             alt=""
-            className="absolute right-0 bottom-0 w-1/5 md:w-auto"
+            className="absolute right-0 bottom-0 w-1/5 lg:w-auto"
           />
           <Image src={whiteHr} alt="" className="absolute bottom-0 left-160" />
           <Image
             src={orangeHr}
             alt=""
-            className="absolute bottom-0 right-20 md:right-40 w-2/3 md:w-auto"
+            className="absolute bottom-0 right-20 lg:right-40 w-2/3 lg:w-auto"
           />
         </div>
       </section>
       <section id="about" className="text-white p-10">
-        <div className="flex flex-col md:flex-row align-middle gap-8 lg:gap-32 relative">
+        <div className="flex flex-col lg:flex-row align-middle gap-8 lg:gap-32 relative">
           <div className={`relative ${ocra_extended.className} flex-initial`}>
             <h2
               className={`${conthrax.className} text-4xl font-bold flex flex-col`}
@@ -93,7 +93,7 @@ export default function About() {
               Pilani (Goa and Pilani campus), ICT Mumbai etc.
             </p>
           </div>
-          <div className="w-full md:w-1/2 flex-none flex relative">
+          <div className="w-full lg:w-1/2 flex-none flex relative">
             <Image
               src={tlImg}
               alt="Image of Tinkerers' Lab"
@@ -106,7 +106,7 @@ export default function About() {
             <Image
               src={topLeftWhite}
               alt=""
-              className="absolute left-0 top-0 w-1/5 md:w-auto"
+              className="absolute left-0 top-0 w-1/5 lg:w-auto"
             />
           </div>
         </div>
